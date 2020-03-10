@@ -12,6 +12,7 @@ input.addEventListener("change", function () {
     
     reader.addEventListener('load', function (e) {
         var lines=e.target.result.split("\n");
+      console.log(lines);
         for(var i=0;i<(lines.length)/2;i++){
             let line=lines[i].split("\t");
             let table = document.getElementById("content");
