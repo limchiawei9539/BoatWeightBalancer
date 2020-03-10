@@ -4,7 +4,9 @@ var leftsum=0;
 var rightsum=0;
 var leftvalues = [];
 
+//if input exists
 if(input){
+//add onchange event listener
 input.addEventListener("change", function () {
   if (this.files && this.files[0]) {
     var myFile = this.files[0];
@@ -12,7 +14,6 @@ input.addEventListener("change", function () {
     
     reader.addEventListener('load', function (e) {
         var lines=e.target.result.split("\n");
-      console.log(lines);
         for(var i=0;i<(lines.length)/2;i++){
             let line=lines[i].split("\t");
             let table = document.getElementById("content");
