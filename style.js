@@ -2,6 +2,7 @@ var input = document.getElementById("myFile");
 var output = document.getElementById("output");
 var leftsum=0;
 var rightsum=0;
+var leftvalues = [];
 
 if(input){
 input.addEventListener("change", function () {
@@ -36,7 +37,10 @@ input.addEventListener("change", function () {
 }
 
 $(document.body).on('change',".selectleft",function (e) {
-    leftsum+=parseInt(this.value,10);
+    leftsum=0;
+    $('.selectleft').each(function() { 
+    leftsum+=parseInt($(this).val(),10);
+    });
     let leftsumt=document.getElementById("leftsumtext");
     leftsumt.innerHTML="Left Sum: "+leftsum;
     if(leftsum-rightsum > 10 )
@@ -55,7 +59,10 @@ $(document.body).on('change',".selectleft",function (e) {
 });
 
 $(document.body).on('change',".selectright",function (e) {
-    rightsum+=parseInt(this.value,10);
+    rightsum=0;
+    $('.selectright').each(function() { 
+    rightsum+=parseInt($(this).val(),10);
+    });
     let rightsumt=document.getElementById("rightsumtext");
     rightsumt.innerHTML="Right Sum: "+rightsum;
     if(leftsum-rightsum > 10 )
