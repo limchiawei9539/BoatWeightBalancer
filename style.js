@@ -79,3 +79,14 @@ $(document.body).on('change',".selectright",function (e) {
         $("#left").css({"background-color":"green"});
     }
 });
+
+$(document).ready(function(){
+    leftsum=0;
+    $('.selectleft').each(function() { 
+    leftsum+=parseInt($(this).val(),10);
+    });
+rightsum=0;
+    $('.selectright').each(function() { 
+    rightsum+=parseInt($(this).val(),10);
+    });
+});
