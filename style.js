@@ -28,6 +28,7 @@ input.addEventListener("change", function () {
 
         for(var j=0;j<lines.length;j++){
             let line1=lines[j].split("\t");
+            console.log(line1[1]);
             $(".selectleft").append('<option value="'+line1[1]+'">'+line1[0]+' '+line1[1]+'</option>');
             $(".selectright").append('<option value="'+line1[1]+'">'+line1[0]+' '+line1[1]+'</option>');
         }
