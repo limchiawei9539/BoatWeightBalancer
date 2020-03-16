@@ -15,7 +15,7 @@ input.addEventListener("change", function () {
     reader.addEventListener('load', function (e) {
         var lines=e.target.result.split("\n");
         for(var i=0;i<(lines.length)/2;i++){
-            let line=lines[i].split("\t");
+            let line=lines[i].split("@");
             let table = document.getElementById("content");
             var row=table.insertRow(-1);
             var cell=row.insertCell(0);
@@ -27,7 +27,7 @@ input.addEventListener("change", function () {
         }
 
         for(var j=0;j<lines.length;j++){
-            let line1=lines[j].split("\t");
+            let line1=lines[j].split("@");
             console.log(lines[0]);
             $(".selectleft").append('<option value="'+line1[1]+'">'+line1[0]+' '+line1[1]+'</option>');
             $(".selectright").append('<option value="'+line1[1]+'">'+line1[0]+' '+line1[1]+'</option>');
